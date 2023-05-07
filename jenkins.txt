@@ -57,12 +57,12 @@ pipeline {
                 success{
                     emailext to: "porwalnitay26@gmail.com",
                     body: " Stage Status of Integration Test on Staging",
-					subject: "Jenkins file run status - Success"
+					subject: "Jenkin file run status - Success"
                 }
                 failure {  
                     emailext to: "porwalnitay26@gmail.com",
                     body: "Stage status of Integration Test on Staging",
-					subject: " Jenkins file run status - Success"					
+					subject: " Jenkin file run status - Success"					
                 } 
             }
         }
