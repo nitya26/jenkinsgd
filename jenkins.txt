@@ -31,14 +31,12 @@ pipeline {
             }
 			 post{
                 success{
-                    emailext 
-                    body: 'Stage Status of security scan: Success',
+                    emailext body: 'Stage Status of security scan: Success',
 					to: 'porwalnitay26@gmail.com',
                     subject: ' Jenkins file run status - Success'
                 }
                 failure {  
-                    emailext 
-					to: "porwalnitay26@gmail.com",
+                    emailext to: "porwalnitay26@gmail.com",
                     subject: "Jenkins file run status - Failed",
                     body: "Stage Status of security scan: Failure"  
                 }
@@ -57,14 +55,12 @@ pipeline {
             }
 			post{
                 success{
-                    emailext
-					to: "porwalnitay26@gmail.com",
+                    emailext to: "porwalnitay26@gmail.com",
                     body: " Stage Status of Integration Test on Staging",
 					subject: "Jenkins file run status - Success"
                 }
                 failure {  
-                    emailext
-					to: "porwalnitay26@gmail.com",
+                    emailext to: "porwalnitay26@gmail.com",
                     body: "Stage Status of Integration Test on Staging",
 					subject: " Jenkins file run status - Success"					
                 } 
@@ -78,14 +74,14 @@ pipeline {
                     emailext attachLog: true,
                     compressLog: true,
                     to: 'porwalnitay26@gmail.com',
-                    body: 'build log can be checked :  $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
+                    body: 'Build log can be checked :  $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
                     subject: 'Jenkins file run status - Success '
                 }
                 failure {  
                     emailext attachLog: true,
                     compressLog: true,
                     to: 'porwalnitay26@gmail.com',
-                    body: ' and Build log can be checked : at $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
+                    body: 'Build log can be checked : at $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
                     subject: " Jenkins file run status - Failed"  
                 }
             }
