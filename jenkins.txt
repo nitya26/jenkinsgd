@@ -69,6 +69,7 @@ pipeline {
 		 stage('Deploy to Production') {
             steps {
                 echo "$PRODUCTION_ENVIRONMENT"
+				}
 				post{
                 success{
                     emailext attachLog: true,
@@ -81,11 +82,12 @@ pipeline {
                     emailext attachLog: true,
                     compressLog: true,
                     to: 'porwalnitay26@gmail.com',
-                    body: 'Build log can be checked : at $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
+                    body: 'Build log can be checked : $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
                     subject: " Jenkins file run status - Failed"  
                 }
             }
-            }
+            
         }
     }
 }
+
