@@ -76,14 +76,14 @@ pipeline {
                     compressLog: true,
                     to: 'porwalnitay26@gmail.com',
                     body: 'Build log can be checked :  $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
-                    subject: 'Jenkins file run status - Success '
+                    subject: 'Jenkins file run status : Success '
                 }
                 failure {  
                     emailext attachLog: true,
                     compressLog: true,
                     to: 'porwalnitay26@gmail.com',
                     body: 'Build log can be checked : $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log',
-                    subject: " Jenkins file run status - Failed"  
+                    subject: " Jenkins file run status : Failed"  
                 }
             }
             
