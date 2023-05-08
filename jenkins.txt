@@ -45,7 +45,7 @@ pipeline {
 		  stage('Deploy to staging') {
             steps {
 			
-				echo "Deploye to staging ...: $TESTING_ENVIRONMENT"
+				echo "Deployed to staging ...: $TESTING_ENVIRONMENT"
             }
         }
          stage('Integration Tests on Staging') {
